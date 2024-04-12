@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -17,7 +18,7 @@ public class Shooting : MonoBehaviour
         {
 
             if (timer <= 0) { 
-                GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.Euler(new Vector3(90,0,0)));
+                GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.Euler(90,0,0));
 
                 bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
 
