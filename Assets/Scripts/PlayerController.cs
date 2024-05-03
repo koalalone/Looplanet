@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     float horizontalInput;
     float verticalInput;
+    float spaceInput;
 
     //LOOKING MOUSE
     Ray ray;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         //LOOKING MOUSE
+        
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         groundPlane = new Plane(Vector3.up, new Vector3(0,1,0));
 
@@ -34,16 +36,19 @@ public class PlayerController : MonoBehaviour
             targetPosition.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
         }
+        
+
+        
 
         //SHOOTING
         if (Input.GetButtonDown("Fire1"))
         {
             if (timer <= 0)
             {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.FromToRotation(transform.forward, Vector3.up));
+                GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward + new Vector3(0f,1f,0f), Quaternion.FromToRotation(transform.forward, Vector3.up));
 
                 bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
-
+                
                 timer = fireRate;
             }
         }
@@ -56,7 +61,16 @@ public class PlayerController : MonoBehaviour
         //WALKING
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed * Time.deltaTime;
+        spaceInput = Input.GetAxis("Jump");
+        
+        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed;
 
+        Vector3 dir = rb.velocity.normalized;
+        rb.AddForce(dir * spaceInput * 2000f);
+
+        //BOUND
+        Vector3 mustPos = transform.position;
+        mustPos = new Vector3(Mathf.Clamp(mustPos.x, -149f, 149f), mustPos.y, Mathf.Clamp(mustPos.z, -149f, 149f));
+        transform.position = mustPos;
     }
 }
