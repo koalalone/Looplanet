@@ -5578,6 +5578,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c202ea5d7a9f8d468afdbce24477823, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2027415514}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3c202ea5d7a9f8d468afdbce24477823, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2027415516}
     - targetCorrespondingSourceObject: {fileID: 6302609228562482870, guid: 3c202ea5d7a9f8d468afdbce24477823, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1102057998}
@@ -5849,6 +5852,18 @@ MonoBehaviour:
   fireRate: 0.5
   bulletSpeed: 40
   bulletPrefab: {fileID: 8611018946516386704, guid: d2abccb20a847dc448c232cca53b9dad, type: 3}
+--- !u!114 &2027415516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027415506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88782184e18091346835407c3258a0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
