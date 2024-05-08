@@ -8,7 +8,9 @@ public class ObjectGeneration : MonoBehaviour
 {
     public GameObject[] prefabs;
     public GameObject[] miniPrefabs;
-    public List<GameObject> props;
+    public GameObject[] enemyPrefabs;
+    //public List<GameObject> props;
+    //public List<GameObject> enemies;
     public float noiseScale = 0.05f;
     public float density = 0.3f;
     public int size = 300;
@@ -30,13 +32,21 @@ public class ObjectGeneration : MonoBehaviour
             }
         }
 
+        for (int y = 0; y < 10; y++)
+        {
+            for (int x = 0; x < 10; x++)
+            {
+                noiseMap[x + 70, y + 70] = 0.5f; 
+            }
+        }
+
         for (int y = 0; y < size/2; y++)
         {
             for (int x = 0; x < size/2; x++)
             {
                 
                 float v = Random.Range(0f, density);
-                float g = Random.Range(0.8f, 1f);
+                float g = Random.Range(0.7f, 0.95f);
 
                 float xCoord = Random.Range(1.9f * (x - 75), 2.1f * (x - 75));
                 float yCoord = Random.Range(1.9f * (y - 75), 2.1f * (y - 75));
@@ -66,6 +76,7 @@ public class ObjectGeneration : MonoBehaviour
                     prop.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
                     prop.transform.localScale = Vector3.one * Random.Range(0.9f, 1.1f);
                 }
+                
             }
         }
 

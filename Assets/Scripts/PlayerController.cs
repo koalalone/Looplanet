@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         
 
         //SHOOTING
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (timer <= 0)
             {
@@ -63,10 +63,10 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         spaceInput = Input.GetAxis("Jump");
         
-        //rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed;
+        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed;
 
 
-        rb.velocity = (transform.forward * verticalInput + transform.right * horizontalInput) * movementSpeed;
+        //rb.velocity = (transform.forward * verticalInput + transform.right * horizontalInput) * movementSpeed;
 
 
 

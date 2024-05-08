@@ -44,9 +44,10 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Bullet"))
         {
             hp -= 5f;
-            if (hp < 0)
+            if (hp <= 0)
             {
-                Debug.Log("öldü");
+                ActivationCheck.props.Remove(gameObject);
+                Destroy(gameObject);
             }
         }
     }
