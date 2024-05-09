@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
             agent.destination = player.transform.position;
             if (distance < attackDistance)
             {
-                Debug.Log("hasar yedin");
+                //Debug.Log("hasar yedin");
             }
         }
     }

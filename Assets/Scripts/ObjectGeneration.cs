@@ -9,10 +9,21 @@ public class ObjectGeneration : MonoBehaviour
     public GameObject[] prefabs;
     public GameObject[] miniPrefabs;
     public GameObject[] enemyPrefabs;
+    public GameObject bossPrefab;
     //public List<GameObject> props;
     //public List<GameObject> enemies;
-    public float noiseScale = 0.05f;
-    public float density = 0.3f;
+    public float noiseScale;
+    public float prefabDensity;
+    public float miniPrefabDensity;
+    public float enemyPrefabDensity;
+
+    public float prefabScaleMin;
+    public float prefabScaleMax;
+    public float miniPrefabScaleMin;
+    public float miniPrefabScaleMax;
+
+    public Texture2D tex;
+
     public int size = 300;
 
     public NavMeshSurface navMeshSurface;
@@ -20,6 +31,9 @@ public class ObjectGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        gameObject.GetComponent<Terrain>().terrainData.terrainLayers[0].diffuseTexture = tex;
+
         float[,] noiseMap = new float[size, size];
         float xOffset = Random.Range(-10000f, 10000f);
         float yOffset = Random.Range(-10000f, 10000f);
@@ -32,21 +46,36 @@ public class ObjectGeneration : MonoBehaviour
             }
         }
 
-        for (int y = 0; y < 10; y++)
+        //Vector3 bossCoord = Random.onUnitSphere * size / 2;
+
+        float angle = Random.Range(0.0f, 2.0f * Mathf.PI);
+        float xCo = (130) * Mathf.Cos(angle);
+        float yCo = (130) * Mathf.Sin(angle);
+        Vector3 bossCoord = new Vector3 (xCo, 0, yCo);
+
+        int cleanArea = 10;
+        int cleanOffset = 75 - (cleanArea / 2);
+
+        for (int y = 0; y < cleanArea; y++)
         {
-            for (int x = 0; x < 10; x++)
+            for (int x = 0; x < cleanArea; x++)
             {
-                noiseMap[x + 70, y + 70] = 0.5f; 
+                noiseMap[x + cleanOffset, y + cleanOffset] = 0.4f;
+                //noiseMap[x + (int)bossCoord.x + 150, y + (int)bossCoord.z + 150] = 0.4f;
             }
         }
+
+        GameObject boss = Instantiate(bossPrefab, transform);
+        boss.transform.position = new Vector3(bossCoord.x, 0 , bossCoord.z);
+        boss.transform.localScale = Vector3.one * 2;
 
         for (int y = 0; y < size/2; y++)
         {
             for (int x = 0; x < size/2; x++)
             {
                 
-                float v = Random.Range(0f, density);
-                float g = Random.Range(0.7f, 0.95f);
+                float v = Random.Range(0f, prefabDensity);
+                float g = Random.Range(miniPrefabDensity, 0.95f);
 
                 float xCoord = Random.Range(1.9f * (x - 75), 2.1f * (x - 75));
                 float yCoord = Random.Range(1.9f * (y - 75), 2.1f * (y - 75));
@@ -65,7 +94,7 @@ public class ObjectGeneration : MonoBehaviour
                     {
                         prop.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
                     }
-                    prop.transform.localScale = Vector3.one * Random.Range(0.9f, 1.1f);
+                    prop.transform.localScale = Vector3.one * Random.Range(prefabScaleMin, prefabScaleMax);
                 }
                 else if (noiseMap[x, y] > g)
                 {
@@ -74,7 +103,7 @@ public class ObjectGeneration : MonoBehaviour
                     ActivationCheck.props.Add(prop);
                     prop.transform.position = new Vector3(xCoord, 0, yCoord);
                     prop.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
-                    prop.transform.localScale = Vector3.one * Random.Range(0.9f, 1.1f);
+                    prop.transform.localScale = Vector3.one * Random.Range(miniPrefabScaleMin, miniPrefabScaleMax);
                 }
                 
             }
