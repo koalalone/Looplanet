@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    int hp = 20;
+
     public GameObject player;
     Rigidbody rb;
     float alertDistance = 20f;
@@ -12,7 +12,10 @@ public class EnemyController : MonoBehaviour
 
     NavMeshAgent agent;
 
-    float hp = 10f;
+    HealthSystem healthSystem;
+    [SerializeField] HealthBar healthBar;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +23,9 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
         agent = GetComponent<NavMeshAgent>();
+        healthSystem = new HealthSystem(hp);
+        
+        healthBar.SetUp(healthSystem);
     }
 
     // Update is called once per frame
@@ -43,8 +49,8 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            hp -= 5f;
-            if (hp <= 0)
+            healthSystem.Damage(5);
+            if (healthSystem.GetHealth() <= 0)
             {
                 ActivationCheck.props.Remove(gameObject);
                 Destroy(gameObject);
