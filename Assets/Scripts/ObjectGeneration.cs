@@ -69,13 +69,16 @@ public class ObjectGeneration : MonoBehaviour
         boss.transform.position = new Vector3(bossCoord.x, 0 , bossCoord.z);
         boss.transform.localScale = Vector3.one * 2;
 
+        int enemycount = 0;
+
         for (int y = 0; y < size/2; y++)
         {
             for (int x = 0; x < size/2; x++)
             {
                 
                 float v = Random.Range(0f, prefabDensity);
-                float g = Random.Range(miniPrefabDensity, 0.95f);
+                float g = Random.Range(miniPrefabDensity, 0.90f);
+                float e = Random.Range(enemyPrefabDensity, 0.95f);
 
                 float xCoord = Random.Range(1.9f * (x - 75), 2.1f * (x - 75));
                 float yCoord = Random.Range(1.9f * (y - 75), 2.1f * (y - 75));
@@ -98,17 +101,29 @@ public class ObjectGeneration : MonoBehaviour
                 }
                 else if (noiseMap[x, y] > g)
                 {
-                    GameObject prefab = miniPrefabs[Random.Range(0, miniPrefabs.Length)];
-                    GameObject prop = Instantiate(prefab, transform);
-                    ActivationCheck.props.Add(prop);
-                    prop.transform.position = new Vector3(xCoord, 0, yCoord);
-                    prop.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
-                    prop.transform.localScale = Vector3.one * Random.Range(miniPrefabScaleMin, miniPrefabScaleMax);
+                    GameObject prefab1 = miniPrefabs[Random.Range(0, miniPrefabs.Length)];
+                    GameObject prop1 = Instantiate(prefab1, new Vector3(xCoord, 0, yCoord), Quaternion.identity);
+                    ActivationCheck.props.Add(prop1);
+                    if (prop1.name.StartsWith("Enemy")) { enemycount++; }
+                    //prop1.transform.position = new Vector3(xCoord, 0, yCoord);
+                    prop1.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
+                    prop1.transform.localScale = prop1.transform.lossyScale * Random.Range(miniPrefabScaleMin, miniPrefabScaleMax);
+                    
                 }
-                
+                /*else if (noiseMap[x, y] > e)
+                {
+                    GameObject prefab2 = enemyPrefabs[0];
+                    GameObject prop2 = Instantiate(prefab2, new Vector3(xCoord, 0, yCoord), Quaternion.identity);
+                    ActivationCheck.props.Add(prop2);
+                    enemycount++;
+                    //prop2.transform.position = new Vector3(xCoord, 0, yCoord);
+                    prop2.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360f), 0);
+                    prop2.transform.localScale = prop2.transform.lossyScale * Random.Range(miniPrefabScaleMin, miniPrefabScaleMax);
+                }
+                */
             }
         }
-
+        Debug.Log(enemycount);
         navMeshSurface.BuildNavMesh();
 
     }
