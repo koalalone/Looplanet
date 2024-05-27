@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //PLAYER STATS
+    public int maxHealth = 100;
+    public int currentHealth = 100;
+
+    public PlayerHealthBar healthBar;
+
     //MOVING
     public float movementSpeed;
     public Rigidbody rb;
@@ -23,6 +29,12 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletPrefab;
     private float timer;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
+
     private void Update()
     {
         //LOOKING MOUSE
@@ -36,9 +48,8 @@ public class PlayerController : MonoBehaviour
             targetPosition.y = transform.position.y;
             transform.rotation = Quaternion.LookRotation(targetPosition - transform.position, Vector3.up);
         }
-        
 
-        
+        if (Input.GetKeyDown(KeyCode.R)) { TakeDamage(5); }
 
         //SHOOTING
         if (Input.GetButton("Fire1"))
@@ -65,19 +76,7 @@ public class PlayerController : MonoBehaviour
         
         rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed;
 
-
         //rb.velocity = (transform.forward * verticalInput + transform.right * horizontalInput) * movementSpeed;
-
-
-
-
-
-
-
-
-
-
-
 
         Vector3 dir = rb.velocity.normalized;
         rb.AddForce(dir * spaceInput * 2000f);
@@ -86,5 +85,12 @@ public class PlayerController : MonoBehaviour
         Vector3 mustPos = transform.position;
         mustPos = new Vector3(Mathf.Clamp(mustPos.x, -149f, 149f), mustPos.y, Mathf.Clamp(mustPos.z, -149f, 149f));
         transform.position = mustPos;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 }
