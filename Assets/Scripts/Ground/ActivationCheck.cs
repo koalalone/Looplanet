@@ -22,7 +22,7 @@ public class ActivationCheck : MonoBehaviour
     {
         while (true)
         {
-            Debug.Log(props.Count);
+            //Debug.Log(props.Count);
             foreach (GameObject obj in props)
             {
                 float distance = Vector3.Distance(player.transform.position, obj.transform.position);
