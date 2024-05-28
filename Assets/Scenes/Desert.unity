@@ -1243,14 +1243,13 @@ MonoBehaviour:
   - {fileID: 4669387458696441964, guid: d11b68f90a49f944f959b0d536a250e2, type: 3}
   - {fileID: 2459118898863656353, guid: b5bf2f7fda505964ea49a02b860908fd, type: 3}
   - {fileID: 6235541791476057992, guid: 40eda48073bba754889672d42f62490d, type: 3}
-  - {fileID: 1705224994618835996, guid: 6ed7ec7d51843a8408caa8c4cdae8d1e, type: 3}
   enemyPrefabs:
   - {fileID: 1705224994618835996, guid: 6ed7ec7d51843a8408caa8c4cdae8d1e, type: 3}
   bossPrefab: {fileID: 3972024285425991496, guid: 45e99415f7c19dc4e92b2e6aa30963d6, type: 3}
   noiseScale: 0.5
   prefabDensity: 0.05
   miniPrefabDensity: 0.7
-  enemyPrefabDensity: 0
+  enemyPrefabDensity: 0.6
   prefabScaleMin: 0.1
   prefabScaleMax: 0.5
   miniPrefabScaleMin: 1
