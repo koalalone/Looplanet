@@ -65,8 +65,8 @@ public class ObjectGeneration : MonoBehaviour
             }
         }
 
-        GameObject boss = Instantiate(bossPrefab, transform);
-        boss.transform.position = new Vector3(bossCoord.x, 0 , bossCoord.z);
+        GameObject boss = Instantiate(bossPrefab, new Vector3(bossCoord.x, 0, bossCoord.z), Quaternion.identity);
+        //boss.transform.position = new Vector3(bossCoord.x, 0 , bossCoord.z);
         boss.transform.localScale = Vector3.one * 2;
 
         int enemycount = 0;

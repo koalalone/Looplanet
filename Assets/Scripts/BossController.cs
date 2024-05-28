@@ -14,10 +14,17 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-
+        
         portal = GameObject.Find("Portal");
+        player = GameObject.Find("player");
+        if (player != null)
+        {
+            Debug.Log("burdayým");
+            playerController = player.GetComponent<PlayerController>();
+        }
         healthSystem = new HealthSystem(hp);
         healthBar.SetUp(healthSystem);
+
         if (portal != null)
         {
             portal.SetActive(false);
@@ -42,7 +49,6 @@ public class BossController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("noldu");
         if (collision.gameObject.CompareTag("Bullet"))
         {
             healthSystem.Damage(5);
@@ -55,7 +61,8 @@ public class BossController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        
+        if (other.gameObject.tag == "Player" && playerController != null)
         {
             playerController.TakeDamage(10);
         }
