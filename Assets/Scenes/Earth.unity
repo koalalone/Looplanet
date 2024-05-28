@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206d509f08088bf488eaf3fb4912e9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1292135805}
   activationDistance: 40
 --- !u!1 &676472658
 GameObject:
@@ -1046,6 +1046,11 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1292135805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5585274431497206142, guid: 9bb4c892f2dfbcb4b84ffc801d030b82, type: 3}
+  m_PrefabInstance: {fileID: 670381887668998807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1465716033
 GameObject:
   m_ObjectHideFlags: 0
