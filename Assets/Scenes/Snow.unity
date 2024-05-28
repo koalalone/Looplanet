@@ -487,7 +487,7 @@ MonoBehaviour:
   noiseScale: 0.3
   prefabDensity: 0.1
   miniPrefabDensity: 0.7
-  enemyPrefabDensity: 0
+  enemyPrefabDensity: 0.6
   prefabScaleMin: 0.1
   prefabScaleMax: 0.5
   miniPrefabScaleMin: 1
