@@ -309,13 +309,13 @@ MonoBehaviour:
   - {fileID: 3795048893163485692, guid: 271128d70b619e140834bd3798b0e5a3, type: 3}
   - {fileID: 6954003744971699533, guid: 69b5318d555237a42b356f250369017e, type: 3}
   - {fileID: 1255887717092019325, guid: 0a4a1d176e47e1b4794c530e893e411a, type: 3}
+  enemyPrefabs:
   - {fileID: 1705224994618835996, guid: 6ed7ec7d51843a8408caa8c4cdae8d1e, type: 3}
-  enemyPrefabs: []
   bossPrefab: {fileID: 1627921743102541850, guid: e373e494e658be5459d465340412ce15, type: 3}
   noiseScale: 0.1
-  prefabDensity: 0.3
+  prefabDensity: 0.4
   miniPrefabDensity: 0.7
-  enemyPrefabDensity: 0.8
+  enemyPrefabDensity: 0.6
   prefabScaleMin: 0.9
   prefabScaleMax: 1.1
   miniPrefabScaleMin: 0.9
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206d509f08088bf488eaf3fb4912e9c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2027415506}
+  player: {fileID: 0}
   activationDistance: 40
 --- !u!1 &676472658
 GameObject:
@@ -1198,11 +1198,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7491581c503dfa546b05c83068ffa5fb, type: 3}
---- !u!1 &2027415506 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5585274431497206142, guid: 9bb4c892f2dfbcb4b84ffc801d030b82, type: 3}
-  m_PrefabInstance: {fileID: 670381887668998807}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2027415507 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5100662119175955396, guid: 9bb4c892f2dfbcb4b84ffc801d030b82, type: 3}
