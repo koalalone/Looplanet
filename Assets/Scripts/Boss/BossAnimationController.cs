@@ -41,7 +41,7 @@ public class BossAnimationController : MonoBehaviour
 
         isAttacking = animator.GetBool(attackingHash);
         isChasing = animator.GetBool(chasingHash);
-        distance = Vector2.Distance(player.transform.position, this.transform.position);
+        distance = Vector3.Distance(player.transform.position, this.transform.position);
         Idle();
         Chase();
         Attack();
