@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d5ff3feef9e79b4389ac52868039886
+guid: 041a408de7fb97a4e98bea0c8eff6289
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_0
-    second: {fileID: 2100000, guid: 76e0f659003520b49ae0cbf9cbccedff, type: 2}
+    second: {fileID: 2100000, guid: c761c69136757d842b2c55c344726a34, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,9 +38,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Fly_attack
-      takeName: Armature|Fly_attack
-      internalID: -1826687751927623638
+      name: Armature|raven_attack
+      takeName: Armature|raven_attack
+      internalID: -493497650430164826
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -67,18 +67,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|fly_chase
-      takeName: Armature|fly_chase
-      internalID: -2117420353455603220
+      name: Armature|raven_idle
+      takeName: Armature|raven_idle
+      internalID: -659480712300592848
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -96,18 +96,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Fly_idle
-      takeName: Armature|Fly_idle
-      internalID: 7948723000870187827
+      name: Armature|T-pose
+      takeName: Armature|T-pose
+      internalID: 6625969979680877914
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

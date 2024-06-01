@@ -1220,6 +1220,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1268111759}
+    - target: {fileID: 2561597535471080364, guid: 9bb4c892f2dfbcb4b84ffc801d030b82, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5100662119175955396, guid: 9bb4c892f2dfbcb4b84ffc801d030b82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -1280,6 +1284,10 @@ PrefabInstance:
     - target: {fileID: 3598108318784668871, guid: 8c3b66aebd7a0c546b8e1aec46d98eac, type: 3}
       propertyPath: m_Name
       value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598108318784668871, guid: 8c3b66aebd7a0c546b8e1aec46d98eac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7260685247848007170, guid: 8c3b66aebd7a0c546b8e1aec46d98eac, type: 3}
       propertyPath: m_LocalPosition.x

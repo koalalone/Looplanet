@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d5ff3feef9e79b4389ac52868039886
+guid: 315aa4eb37584524087af92220df700a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_0
-    second: {fileID: 2100000, guid: 76e0f659003520b49ae0cbf9cbccedff, type: 2}
+    second: {fileID: 2100000, guid: c973b4045adf7e34a9f74a9b2a048257, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,11 +38,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Fly_attack
-      takeName: Armature|Fly_attack
-      internalID: -1826687751927623638
+      name: Armature|golem_attack
+      takeName: Armature|golem_attack
+      internalID: -7370355304346897105
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -67,18 +67,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|fly_chase
-      takeName: Armature|fly_chase
-      internalID: -2117420353455603220
+      name: Armature|golem_idle
+      takeName: Armature|golem_idle
+      internalID: -66643154861645952
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 19
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -96,18 +96,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Fly_idle
-      takeName: Armature|Fly_idle
-      internalID: 7948723000870187827
+      name: Armature|golem_walk
+      takeName: Armature|golem_walk
+      internalID: -926540494694044644
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

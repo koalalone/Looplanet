@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d5ff3feef9e79b4389ac52868039886
+guid: ed1d9f9bacb86924aa1d0efa2bfab02b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material_0
-    second: {fileID: 2100000, guid: 76e0f659003520b49ae0cbf9cbccedff, type: 2}
+    second: {fileID: 2100000, guid: 5f256f8556c0e4548bbc779523dcec2e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -38,9 +38,38 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Fly_attack
-      takeName: Armature|Fly_attack
-      internalID: -1826687751927623638
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      internalID: 4781951162920444690
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|shaman_heal
+      takeName: Armature|shaman_heal
+      internalID: -7842003757573747155
       firstFrame: 0
       lastFrame: 39
       wrapMode: 0
@@ -67,18 +96,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|fly_chase
-      takeName: Armature|fly_chase
-      internalID: -2117420353455603220
+      name: Armature|shaman_idle
+      takeName: Armature|shaman_idle
+      internalID: 7392720892939547324
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -96,11 +125,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|Fly_idle
-      takeName: Armature|Fly_idle
-      internalID: 7948723000870187827
+      name: Armature|shaman_walk
+      takeName: Armature|shaman_walk
+      internalID: 4685040214162899923
       firstFrame: 0
-      lastFrame: 19
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|T-pose
+      takeName: Armature|T-pose
+      internalID: 6625969979680877914
+      firstFrame: 0
+      lastFrame: 1
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

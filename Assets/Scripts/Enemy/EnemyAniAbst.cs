@@ -5,13 +5,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class BossAnimationController : MonoBehaviour
+public abstract class EnemyAniAbst : MonoBehaviour
 {
-
-
     public GameObject player;
-    float alertDistance = 20f;
-    float attackDistance = 5f;
+
+    [SerializeField]
+    float alertDistance;
+
+    [SerializeField]
+    float attackDistance;
     private float distance;
 
     Animator animator;
@@ -80,7 +82,6 @@ public class BossAnimationController : MonoBehaviour
             agent.destination = player.transform.position;
         }
     }
-
 
 
 }
