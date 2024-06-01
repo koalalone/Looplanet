@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     float verticalInput;
     float spaceInput;
+    float dashTime = 0f;
+    float dashCooldown = 1f;
 
     //LOOKING MOUSE
     Ray ray;
@@ -27,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public float fireRate = 0.5f;
     public float bulletSpeed = 10f;
     public GameObject bulletPrefab;
+    public GameObject bulletFrom;
     private float timer;
 
     private void Start()
@@ -56,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             if (timer <= 0)
             {
-                GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward + new Vector3(0f,1f,0f), Quaternion.FromToRotation(transform.forward, Vector3.up));
+                GameObject bullet = Instantiate(bulletPrefab, bulletFrom.transform.position + transform.forward, bulletFrom.transform.rotation);
 
                 bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
                 
@@ -79,7 +84,17 @@ public class PlayerController : MonoBehaviour
         //rb.velocity = (transform.forward * verticalInput + transform.right * horizontalInput) * movementSpeed;
 
         Vector3 dir = rb.velocity.normalized;
-        rb.AddForce(dir * spaceInput * 2000f);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Time.time >= dashTime + dashCooldown)
+            {
+                //rb.velocity *= 50f;
+                rb.AddForce(rb.velocity * 2000f);
+                dashTime = Time.time;
+            }
+        }
+        
 
         //BOUND
         Vector3 mustPos = transform.position;
@@ -90,6 +105,11 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if (currentHealth <= 0) 
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        }
 
         healthBar.SetHealth(currentHealth);
     }
