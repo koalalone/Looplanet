@@ -378,8 +378,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01362655, y: 0.01329476, z: 0.03809683}
-  m_Center: {x: 0.00074942835, y: 0.00025132482, z: -0.011232666}
+  m_Size: {x: 0.024267517, y: 0.01329476, z: 0.03809683}
+  m_Center: {x: 0.006069913, y: 0.00025132482, z: -0.011232666}
 --- !u!1 &6203044994402953928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 437f10c966e84414490af0b753258b31, type: 3}
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b1851f24860824ba19e3257ef05191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 15
   damage: 5
   healthBar: {fileID: 4840545724942088525}
   playerController: {fileID: 0}

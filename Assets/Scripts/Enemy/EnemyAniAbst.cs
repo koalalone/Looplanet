@@ -10,19 +10,19 @@ public abstract class EnemyAniAbst : MonoBehaviour
     public GameObject player;
 
     [SerializeField]
-    float alertDistance;
+    protected float alertDistance;
 
     [SerializeField]
-    float attackDistance;
-    private float distance;
+    protected float attackDistance;
+    protected float distance;
 
-    Animator animator;
-    int attackingHash;
-    int chasingHash;
-    bool isAttacking;
-    bool isChasing;
+    protected Animator animator;
+    protected int attackingHash;
+    protected int chasingHash;
+    protected bool isAttacking;
+    protected bool isChasing;
 
-    NavMeshAgent agent;
+    protected NavMeshAgent agent;
 
 
 
@@ -38,15 +38,15 @@ public abstract class EnemyAniAbst : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    public virtual void FixedUpdate()
     {
-
         isAttacking = animator.GetBool(attackingHash);
         isChasing = animator.GetBool(chasingHash);
         distance = Vector3.Distance(player.transform.position, this.transform.position);
         Idle();
         Chase();
         Attack();
+        
     }
 
     void Idle()
@@ -73,13 +73,15 @@ public abstract class EnemyAniAbst : MonoBehaviour
     }
 
 
-    void Attack()
+    public virtual void Attack()
     {
+        
         if (distance < attackDistance)
         {
+            
             animator.SetBool(chasingHash, false);
             animator.SetBool(attackingHash, true);
-            agent.destination = player.transform.position;
+            
         }
     }
 

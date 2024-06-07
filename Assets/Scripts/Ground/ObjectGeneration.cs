@@ -112,7 +112,7 @@ public class ObjectGeneration : MonoBehaviour
                 }
                 else if (noiseMap[x, y] > e && noiseMap[x, y] < 0.605)
                 {
-                    GameObject prefab2 = enemyPrefabs[0];
+                    GameObject prefab2 = enemyPrefabs[Random.Range(0,enemyPrefabs.Length)];
                     GameObject prop2 = Instantiate(prefab2, new Vector3(xCoord, 0, yCoord), Quaternion.identity);
                     ActivationCheck.props.Add(prop2);
                     enemycount++;

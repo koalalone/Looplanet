@@ -226,7 +226,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|scorpion_walk
-  m_Speed: 3
+  m_Speed: 5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6797390879043957305}
