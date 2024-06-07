@@ -89,9 +89,10 @@ public class PlayerController : MonoBehaviour
         {
             if (Time.time >= dashTime + dashCooldown)
             {
-                //rb.velocity *= 50f;
-                rb.AddForce(rb.velocity * 2000f);
-                dashTime = Time.time;
+                Vector3 targetPos = transform.position + dir * 100f;
+                transform.position = Vector3.Lerp(transform.position, targetPos, 3f * Time.deltaTime);
+                //rb.AddForce(rb.velocity * 5000f, ForceMode.Impulse);
+                //dashTime = Time.time;
             }
         }
         
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0) 
         {
+            ActivationCheck.props.Clear();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         }
