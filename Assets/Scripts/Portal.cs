@@ -1,25 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
     public int scene;
+    GameObject portalText;
 
     private void Start()
     {
         scene = SceneManager.GetActiveScene().buildIndex;
+        portalText = GameObject.Find("PortalText");
         //gameObject.SetActive(false);
     }
 
     public void ActivatePortal()
     {
         gameObject.SetActive(true);
+        StartCoroutine(PortalText());
+        
+    }
+
+    private IEnumerator PortalText()
+    {
+        portalText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        portalText.gameObject.SetActive(false);
     }
 
     public void DeactivatePortal()
     {
+        portalText.gameObject.SetActive(false );
         gameObject.SetActive(false);
     }
 
