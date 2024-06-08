@@ -62,6 +62,7 @@ public class BossController : MonoBehaviour
             if (healthSystem.GetHealth() <= 0)
             {
                 Death();
+                ScoreController.score += 200;
             }
         }
     }
