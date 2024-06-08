@@ -321,6 +321,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f501d3bea056d04ea82c88e8452e79b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1278568486094744494}
+    - targetCorrespondingSourceObject: {fileID: 6905609870639353253, guid: 6f501d3bea056d04ea82c88e8452e79b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7853155089002511461}
     - targetCorrespondingSourceObject: {fileID: 7157309607397930224, guid: 6f501d3bea056d04ea82c88e8452e79b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8265274528568148874}
@@ -349,7 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   alertDistance: 20
-  attackDistance: 2
+  attackDistance: 1.5
 --- !u!114 &2811672903564289986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238b780ac0eb1894da565e665960b8c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 20
   damage: 5
   healthBar: {fileID: 4413172810281010042}
   playerController: {fileID: 0}
@@ -460,5 +463,31 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.018856555, y: 0.01169854, z: 0.030770116}
-  m_Center: {x: -0.0003188414, y: 0.0005163819, z: -0.0070012454}
+  m_Size: {x: 0.022277018, y: 0.01169854, z: 0.030770116}
+  m_Center: {x: 0.0013913689, y: 0.0005163818, z: -0.007001245}
+--- !u!1 &7905293788587398641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6905609870639353253, guid: 6f501d3bea056d04ea82c88e8452e79b, type: 3}
+  m_PrefabInstance: {fileID: 3630069825876351060}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7853155089002511461
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7905293788587398641}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.01171876, y: 0.034600105, z: 0.01}
+  m_Center: {x: 0.0014851859, y: 0.0005466108, z: 1.127182e-10}

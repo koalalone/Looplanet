@@ -34,7 +34,8 @@ public abstract class EnemyCont : MonoBehaviour
     public void Death()
     {
         gameObject.SetActive(false);
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
+        ActivationCheck.props.Remove(gameObject);
 
     }
 
@@ -42,7 +43,6 @@ public abstract class EnemyCont : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("vursana");
             healthSystem.Damage(5);
             if (healthSystem.GetHealth() <= 0)
             {

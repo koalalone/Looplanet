@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BossController : MonoBehaviour
@@ -11,6 +13,7 @@ public class BossController : MonoBehaviour
     [SerializeField] HealthBar healthBar;
     GameObject player;
     public PlayerController playerController;
+    Portal portalScript;
 
     private void Start()
     {
@@ -19,7 +22,6 @@ public class BossController : MonoBehaviour
         player = GameObject.Find("player");
         if (player != null)
         {
-            Debug.Log("burdayým");
             playerController = player.GetComponent<PlayerController>();
         }
         healthSystem = new HealthSystem(hp);
@@ -27,7 +29,9 @@ public class BossController : MonoBehaviour
 
         if (portal != null)
         {
-            portal.SetActive(false);
+            portalScript = portal.GetComponent<Portal>();
+            portalScript.DeactivatePortal();
+            //portal.SetActive(false);
         }
     }
 
@@ -40,12 +44,15 @@ public class BossController : MonoBehaviour
     }
 
     public void Death()
-    {
-        portal.SetActive(true);
+    {   
+        portalScript.ActivatePortal();
+        //portal.SetActive(true);
         gameObject.SetActive(false);
         //Destroy(this.gameObject);
 
     }
+
+    
 
     private void OnCollisionEnter(Collision collision)
     {
