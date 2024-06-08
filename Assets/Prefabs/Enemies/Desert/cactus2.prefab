@@ -324,6 +324,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7686609989614500704, guid: c7e71e8f8b90b2647a5bfe59f6f67fe9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1049436912471194463}
+    - targetCorrespondingSourceObject: {fileID: -7686609989614500704, guid: c7e71e8f8b90b2647a5bfe59f6f67fe9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2962989525830856131}
     - targetCorrespondingSourceObject: {fileID: -885814945161664144, guid: c7e71e8f8b90b2647a5bfe59f6f67fe9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6330692487256228233}
@@ -360,6 +363,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.004007575, y: 0.014820606, z: 0.007897313}
   m_Center: {x: -0.00003955714, y: 0.002410297, z: 0.000036964615}
+--- !u!65 &2962989525830856131
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944641996166949255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0015560818, y: 0.015974747, z: 0.010268707}
+  m_Center: {x: 0.0034617125, y: 0.010083518, z: -0.0001887456}
 --- !u!1 &3553266894825345142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c7e71e8f8b90b2647a5bfe59f6f67fe9, type: 3}
@@ -392,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848e5a4a966ace6498797eb0c55e4431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 20
   damage: 5
   healthBar: {fileID: 7705228060792486437}
   playerController: {fileID: 0}
@@ -406,8 +430,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 10
-  m_Acceleration: 10
+  m_Speed: 7
+  m_Acceleration: 9
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -512,12 +536,12 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -533,14 +557,14 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009461449, y: 0.015915029, z: 0.015507866}
-  m_Center: {x: -0.0005495471, y: -0.000042522548, z: 0.00029301702}
+  m_Size: {x: 0.015799178, y: 0.015915029, z: 0.028647704}
+  m_Center: {x: 0.0026193282, y: -0.00004252255, z: 0.0068629524}

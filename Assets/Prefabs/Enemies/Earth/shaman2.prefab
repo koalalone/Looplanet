@@ -391,9 +391,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b4fd351551e0b44a9a771e8bdb8382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectile: {fileID: 2775907363062241861, guid: 45080a129975dfe4898989fb666bf688, type: 3}
+  attackPoint: {fileID: 4750275533247046352}
   player: {fileID: 0}
   alertDistance: 20
-  attackDistance: 5
+  attackDistance: 15
 --- !u!114 &2266437818458319387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e192dd0001ed1f40a07ba089e5dbefc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
+  hp: 25
   damage: 5
   healthBar: {fileID: 8158334677755843841}
   playerController: {fileID: 0}
@@ -451,7 +453,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 5
+  m_StoppingDistance: 13
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -604,7 +606,8 @@ Transform:
   m_LocalPosition: {x: -0, y: 0.0051287035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4750275533247046352}
   m_Father: {fileID: 5225932579090750746}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4707099902298821575
@@ -1023,6 +1026,37 @@ Transform:
   - {fileID: 4637251880980787016}
   - {fileID: 8341641318879064760}
   m_Father: {fileID: 5171130344554273435}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7255757876766942532
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4750275533247046352}
+  m_Layer: 0
+  m_Name: attack_point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4750275533247046352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255757876766942532}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 294539962867916755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7278492596433884523
 GameObject:

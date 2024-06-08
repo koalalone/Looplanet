@@ -22,7 +22,6 @@ public class BossController : MonoBehaviour
         player = GameObject.Find("player");
         if (player != null)
         {
-            Debug.Log("burdayým");
             playerController = player.GetComponent<PlayerController>();
         }
         healthSystem = new HealthSystem(hp);
