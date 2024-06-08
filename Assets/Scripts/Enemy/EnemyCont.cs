@@ -47,6 +47,7 @@ public abstract class EnemyCont : MonoBehaviour
             if (healthSystem.GetHealth() <= 0)
             {
                 Death();
+                ScoreController.score += 10;
             }
         }
     }
