@@ -2168,6 +2168,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 469737859537578908, guid: 7d9de210acb34304982e04373ea0b200, type: 3}
+      propertyPath: MinimapCam
+      value: 
+      objectReference: {fileID: 1590962790}
     - target: {fileID: 1599726915283191629, guid: 7d9de210acb34304982e04373ea0b200, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
@@ -2278,6 +2282,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbf85e27a8ec4c4458f6bba595a83a84, type: 3}
+--- !u!4 &1590962790 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3288891091716002306, guid: cbf85e27a8ec4c4458f6bba595a83a84, type: 3}
+  m_PrefabInstance: {fileID: 1590962789}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1720991775
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,10 +41,12 @@ public class Portal : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            AudioManager.instance.PlaySFX("portalsound");
             ActivationCheck.props.Clear();
             if (scene + 1 > 3)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(0);
+                ScoreController.score = 0;
                 return;
             }
             SceneManager.LoadScene(scene + 1);

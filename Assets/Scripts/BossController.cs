@@ -56,15 +56,7 @@ public class BossController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            healthSystem.Damage(5);
-            if (healthSystem.GetHealth() <= 0)
-            {
-                Death();
-                ScoreController.score += 200;
-            }
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,6 +65,16 @@ public class BossController : MonoBehaviour
         if (other.gameObject.tag == "Player" && playerController != null)
         {
             playerController.TakeDamage(10);
+        }
+
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            healthSystem.Damage(5);
+            if (healthSystem.GetHealth() <= 0)
+            {
+                Death();
+                ScoreController.score += 200;
+            }
         }
     }
 

@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 8751762305081842774}
   - component: {fileID: 578739213306139280}
   - component: {fileID: 6274057051950819133}
+  - component: {fileID: 3501100285189551419}
   m_Layer: 8
   m_Name: icon
   m_TagString: Untagged
@@ -787,6 +788,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3501100285189551419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2238782456762024588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5096933aac615ed4995559c1d1cfe2cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinimapCam: {fileID: 0}
+  MinimapSize: 35
 --- !u!1 &2285875816232131924
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +1017,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

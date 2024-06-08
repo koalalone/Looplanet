@@ -13,9 +13,12 @@ public class NPC : MonoBehaviour
 
     private void Start()
     {
-        textArray.Add("Hello traveler!");
-        textArray.Add("You are in a loop.");
-        textArray.Add("You have to destroy boss to exit loop!");
+        textArray.Add("Welcome traveler! It's a pleasure to see you in these mysterious lands.");
+        textArray.Add("Long ago, these lands were peaceful and serene. But a shadowy force began to take over the planets.");
+        textArray.Add("The master of darkness created powerful bosses on each planet, spreading terror.");
+        textArray.Add("Our duty is to defeat these bosses, activate the portals, and restore light.");
+        textArray.Add("Each planet has its own unique challenges and secrets. Are you ready to explore?");
+        textArray.Add("This will be a difficult quest, but I know you have the spirit of a hero within you.");
         //Add dialogues here
     }
 
