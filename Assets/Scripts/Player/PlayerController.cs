@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             if (timer <= 0)
             {
                 GameObject bullet = Instantiate(bulletPrefab, bulletFrom.transform.position + transform.forward, bulletFrom.transform.rotation);
-
+                AudioManager.instance.PlaySFX("lasershoot");
                 bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
                 
                 timer = fireRate;
@@ -116,6 +116,7 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0) 
         {
+            ScoreController.score = 0;
             ActivationCheck.props.Clear();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 

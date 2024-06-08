@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        switch (collision.transform.tag)
+        switch (other.transform.tag)
         {
             default:
                 GameObject effect = Instantiate(explosionPrefab, transform.position, Quaternion.identity);

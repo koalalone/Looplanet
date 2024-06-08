@@ -17,7 +17,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayMusic("backgroundmusic");
     }
 
     private void Awake()
@@ -67,5 +67,14 @@ public class AudioManager : MonoBehaviour
 
         audioSFX.clip = clip;
         audioSFX.PlayOneShot(clip);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        audioMusic.volume = volume;
+    }
+    public void SetSFXVolume(float volume)
+    {
+        audioSFX.volume = volume;
     }
 }
