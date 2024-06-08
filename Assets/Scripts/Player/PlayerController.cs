@@ -19,7 +19,9 @@ public class PlayerController : MonoBehaviour
     float verticalInput;
     float spaceInput;
     float dashTime = 0f;
-    float dashCooldown = 1f;
+    float dashCooldown = 2f;
+    float movespeedBoost = 50f;
+    float currentspeed;
 
     //LOOKING MOUSE
     Ray ray;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        currentspeed = movementSpeed;
     }
 
     private void Update()
@@ -79,20 +82,25 @@ public class PlayerController : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         spaceInput = Input.GetAxis("Jump");
         
-        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * movementSpeed;
+        rb.velocity = new Vector3(horizontalInput, 0, verticalInput) * currentspeed;
 
         //rb.velocity = (transform.forward * verticalInput + transform.right * horizontalInput) * movementSpeed;
 
         Vector3 dir = rb.velocity.normalized;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButton("Fire2"))
         {
-            if (Time.time >= dashTime + dashCooldown)
+            
+            if (Time.time >= dashTime)
             {
+                StartCoroutine(Dashing());
+                dashTime = Time.time+dashCooldown;
+                /*
                 Vector3 targetPos = transform.position + dir * 100f;
                 transform.position = Vector3.Lerp(transform.position, targetPos, 3f * Time.deltaTime);
                 //rb.AddForce(rb.velocity * 5000f, ForceMode.Impulse);
-                //dashTime = Time.time;
+                
+                */
             }
         }
         
@@ -114,5 +122,14 @@ public class PlayerController : MonoBehaviour
         }
 
         healthBar.SetHealth(currentHealth);
+    }
+
+
+    private IEnumerator Dashing()
+    {
+
+        currentspeed = movespeedBoost;
+        yield return new WaitForSeconds(0.1f);
+        currentspeed = movementSpeed;
     }
 }

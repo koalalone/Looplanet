@@ -81,7 +81,7 @@ public abstract class EnemyAniAbst : MonoBehaviour
             
             animator.SetBool(chasingHash, false);
             animator.SetBool(attackingHash, true);
-            
+            agent.destination = player.transform.position;
         }
     }
 
